@@ -1,11 +1,13 @@
 import PrivateRoute from "@/Components/PrivateRoute";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 
 
 
-const about =  () => {
+const about =  async() => {
 
-
+    const { getUser} = getKindeServerSession();
+    const user = await getUser(); 
 
     return (
 <PrivateRoute>
