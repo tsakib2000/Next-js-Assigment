@@ -1,16 +1,21 @@
 import PrivateRoute from "@/Components/PrivateRoute";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { redirect } from "next/navigation";
+
 
 
 
 
 const about =  async() => {
 
-    const { getUser} = getKindeServerSession();
+    const { getUser,isAuthenticated} = getKindeServerSession();
+    if(!(await isAuthenticated())){
+        redirect('/api/auth/login')
+    }
     const user = await getUser(); 
 
     return (
-<PrivateRoute>
+
 <div className="flex flex-col justify-center items-center h-screen">
  <h1 className="text-3xl font-bold">Welcome to your profile</h1>
 
@@ -20,7 +25,7 @@ const about =  async() => {
      
  </div>
         </div>
-</PrivateRoute>
+
     );
 };
 
