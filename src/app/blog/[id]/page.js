@@ -1,4 +1,4 @@
-import PrivateRoute from "@/Components/PrivateRoute";
+
 
 
 
@@ -10,13 +10,13 @@ const page =async ({params}) => {
 const {title,body}=data
 console.log(data);
     return (
-    <PrivateRoute>
+    
             <div className="p-8 text-center space-y-5">
                 <p>ID:{id}</p>
            <h1 className="text-3xl font-bold">{title}</h1>
            <p>Description: {body}</p>
         </div>
-    </PrivateRoute>
+    
     );
 };
 
