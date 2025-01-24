@@ -1,14 +1,12 @@
 import PrivateRoute from "@/Components/PrivateRoute";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 
 
-const about = async () => {
+
+const about =  ({user}) => {
 
 
-      const { getUser } = getKindeServerSession();
-      const user = await getUser();
-      console.log(user);
+
     return (
 <PrivateRoute>
 <div className="flex flex-col justify-center items-center h-screen">
