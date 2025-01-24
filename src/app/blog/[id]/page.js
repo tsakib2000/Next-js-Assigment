@@ -14,7 +14,7 @@ console.log(data);
             <div className="p-8 text-center space-y-5">
                 <p>ID:{id}</p>
            <h1 className="text-3xl font-bold">{title}</h1>
-           <p>{body}</p>
+           <p>Description: {body}</p>
         </div>
     </PrivateRoute>
     );
