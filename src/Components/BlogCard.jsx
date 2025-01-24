@@ -4,7 +4,7 @@ const BlogCard = async ({ blog }) => {
   const { id, title } = blog;
   return (
     <Link
-      className="border flex justify-center items-center p-5"
+      className="border flex justify-center items-center p-5 rounded-md"
       href={`blog/${id}`}
     >
       <h1 className="font-semibold">{title}</h1>

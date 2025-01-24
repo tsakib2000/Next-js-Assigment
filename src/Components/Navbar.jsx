@@ -5,10 +5,10 @@ const Navbar = async () => {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
   return (
-    <div className="bg-gray-700 h-[64px] flex justify-center items-center">
+    <div className="bg-gray-700 h-[64px]  flex justify-center items-center">
       <div className="w-11/12 mx-auto  flex justify-between items-center  ">
         <div>
-          <h1 className="text-white">logo</h1>
+          <h1 className="text-white">Blog Page</h1>
         </div>
         <div className="flex gap-5">
           <Link className="text-white" href="/">
