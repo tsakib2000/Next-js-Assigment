@@ -1,4 +1,4 @@
-import BlogCard from "@/Components/BlogCard";
+import BlogCard from "@/components/BlogCard";
 
 export default async function Home() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');

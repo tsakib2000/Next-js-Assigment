@@ -1,4 +1,4 @@
-import PrivateRoute from "@/Components/PrivateRoute";
+import PrivateRoute from "@/components/PrivateRoute";
 
 
 
