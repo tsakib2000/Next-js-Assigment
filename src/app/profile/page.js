@@ -6,10 +6,10 @@ import { redirect } from "next/navigation";
 export default async function Protected() {
     const { isAuthenticated } = getKindeServerSession();
     const user= await isAuthenticated() 
-    
-// if(!user){
-//     return redirect('/api/auth/login') 
-// }
+    console.log(user);
+if(user == false) {
+    return redirect('/api/auth/login') 
+}
 
   return (
 
