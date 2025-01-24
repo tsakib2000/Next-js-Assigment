@@ -1,9 +1,11 @@
 
 import { LoginLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { redirect } from "next/navigation";
 
 export default async function Protected() {
   const { getUser,isAuthenticated } = getKindeServerSession();
+  
 const {user}=await getUser
   return (await isAuthenticated()) ?(
 
@@ -17,9 +19,5 @@ const {user}=await getUser
      </div>
             </div>
     
-        ) : (
-    <div>
-      This page is protected, please <LoginLink>Login</LoginLink> to view it
-    </div>
-  );
+        ) : redirect('/api/auth/login')
 }
