@@ -3,7 +3,7 @@ import PrivateRoute from "@/Components/PrivateRoute";
 
 
 
-const about =  ({user}) => {
+const about =  () => {
 
 
 

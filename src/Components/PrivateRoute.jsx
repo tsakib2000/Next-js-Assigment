@@ -1,26 +1,16 @@
 
-export const getServerSideProps = async (context) => {
-    const { getUser } = getKindeServerSession(context.req, context.res);
-    const user = await getUser();
-  
-    if (!user) {
-      return {
-        redirect: {
-          destination: "/api/auth/login",
-          permanent: false,
-        },
-      };
-    }
-  
-    return {
-      props: { user },
-    };
-  };
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { redirect } from "next/navigation";
 
 
 
 const PrivateRoute =async ({ children }) => {
     
+    
+    const { getUser } = getKindeServerSession();
+    const user = await getUser();  
+   
+if(!user) return redirect('/api/auth/login')
   return <>{children}</>; 
 };
 
